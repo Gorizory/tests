@@ -15,4 +15,4 @@ function chunkArrayInGroups(arr, size) {
 }
 console.log(chunkArrayInGroups(["a", "b", "c", "d"], 2));
 console.log(chunkArrayInGroups(["a", "b", "c", "d", "e"], 2));
-console.log(chunkArrayInGroups(["a", "b", "c", "d", "e"], 3));
+console.log(chunkArrayInGroups(["a", "b", "c", "d", "e"], 4));
