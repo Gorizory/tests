@@ -1,15 +1,16 @@
-function range(start, stop, step) {
-  var arr = [];
-  if (step === undefined) {
-    step = 1;
-  }
+'use strict'
+
+function range(start, stop, step = 1) {
+  let arr = [];
   if (stop === undefined) {
     stop = start;
     start = 0;
   }
-  for (var i = start; i < stop; i += step) {
+
+  for (let i = start; i < stop; i += step) {
     arr[arr.length] = i;
   }
+
   return arr;
 }
 
