@@ -1,7 +1,8 @@
+'use strict'
+
 function randomNumber() {
-  var num = Math.random();
-  var t = Math.random();
-  setTimeout(function () {}, t);
-  return num;
+  const num = Math.random() * 1000;
+  const t = Math.random() * 1000;
+  setTimeout(() => { console.log(num)}, t);
 }
-console.log(randomNumber());
+randomNumber();
