@@ -1,14 +1,17 @@
-var str = "{ \"name\": \"Вася\", \"age\": 35, \"friend\": { \"name\": \"Петя\", \"meetings\": [2013, 2015, 2016] } }";
-var val = JSON.parse(str);
+'use strict'
+
+const str = "{ \"name\": \"Вася\", \"age\": 35, \"friend\": { \"name\": \"Петя\", \"meetings\": [2013, 2015, 2016] } }";
+const val = JSON.parse(str);
+
 function deepCopy(val) {
-  var result = {};
-  for (var key in val) {
+  let result = {};
+  for (let key in val) {
     if (!val.hasOwnProperty(key)) {
       break;
     }
     if (Array.isArray(key)) {
       result[key] = val[key];
-    } else if (typeof val[key] === 'object') {
+    } else if (val[key] instanceof Object) {
       result[key] = deepCopy(val[key]);
     } else {
       result[key] = val[key];
@@ -16,5 +19,5 @@ function deepCopy(val) {
   }
   return result;
 }
-var result = deepCopy(val);
-console.log(result);
+
+console.log(deepCopy(val));
