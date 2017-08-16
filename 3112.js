@@ -1,8 +1,10 @@
-var arr = [1, 2, 3, 4, 5];
+'use strict'
+
+const arr = [1, 2, 3, 4, 5];
 function drop(arr, i) {
-  arr.splice(i, 1);
+  let newArr = Array.from(arr);
+  newArr.splice(i, 1);
+  return newArr;
 }
-drop(arr, 3) // [1, 2, 3, 5]
-for (i = 0; i < arr.length; i++) {
-  console.log(arr[i]);
-}
+let newArr = drop(arr, 3) // [1, 2, 3, 5]
+console.log(newArr);
