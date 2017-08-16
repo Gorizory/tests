@@ -7,7 +7,7 @@ function wrap(str, num) {
 
   while (length > 0) {
     let numTemp = num;
-    for (let i = 1; i < num / 4; i++) {
+    for (let i = 1; i < numTemp; i++) {
       if (str[start + num - i - 1] === ' ') {
         numTemp = num - i;
         break;
