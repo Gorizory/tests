@@ -1,4 +1,6 @@
-var mike = {
+'use strict'
+
+const mike = {
   friends: [{
     name: 'Anna',
     avatar: {
@@ -6,14 +8,19 @@ var mike = {
     }
   }]
 }
-var url;
-var friend = mike.friends[0];
-if (friend === undefined) {
-  url = 'http://default/url/to/avatar'
-} else {
-  url = mike.friends[0].avatar.url;
-  if (url === undefined) {
-    url = 'http://default/url/to/avatar'
+
+function getAvatar (person, urlDefault) {
+  let url;
+
+  if (person.friends[0] === undefined) {
+    return urlDefault;
+  } else {
+    url = person.friends[0].avatar.url
+    if (url === undefined) {
+      return urlDefault;
+    }
+    return url;
   }
 }
-console.log(url);
+
+console.log(getAvatar(mike, 'http://default/url/to/avatar'));
